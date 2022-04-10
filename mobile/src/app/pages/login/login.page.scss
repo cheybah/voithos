@@ -1,0 +1,114 @@
+ion-header {
+  .login-header {
+    background: var(--ion-color-primary);
+    position: relative;
+    background: var(--ion-color-primary);
+    border-radius: 0%;
+    max-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .login-header:after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 15%;
+    width: 0%;
+    height: 0%;
+    border: 20px solid transparent;
+    border-bottom: 0%;
+    margin-left: -15px;
+    margin-bottom: -15px;
+  }
+
+  .voithos-logo {
+    display: block;
+    border-radius: 50%;
+    // width: 50%;
+    max-height: 90%;
+    // margin: auto;
+    text-align: center;
+  }
+}
+
+[heading-column-lr] {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+[big-heading] {
+  font-family: "Heebo Font" !important;
+  font-size: 30px !important;
+  color: #8fb3d1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  margin-top: 30px;
+}
+
+ion-label {
+  text-align: center;
+  color: black;
+  opacity: 8;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+ion-content {
+  --background: #fafafa;
+}
+
+[transparent] {
+  --background: transparent;
+}
+
+ion-input {
+  --color: black;
+  --padding-bottom: 15px;
+  --padding-top: 15px;
+  --padding-start: 5px;
+  font-size: 15px;
+  text-indent: 1px;
+  padding-left: 10px !important;
+}
+
+[icon-smalluser] {
+  width: 30px;
+}
+[icon-smallpass] {
+  width: 30px;
+}
+
+[linespace] {
+  height: 20px;
+}
+
+.forget-password {
+  color: black;
+  font-size: 13px;
+  display: block;
+  text-align: right;
+  padding: 10px;
+}
+
+ion-item {
+  margin: 26px 15px;
+  border-radius: 5px;
+  //   box-shadow: 2px 10px 20px 5px #1f2937;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+ion-button {
+  margin: 30px auto;
+  width: 50%;
+  border-radius: 15px;
+}
+
+.errorMessage {
+  color: rgb(160, 20, 20);
+  font-weight: 750;
+}

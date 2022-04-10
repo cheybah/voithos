@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-content class="ion-no-border">
+    <div class="img-container">
+      <img
+        class="img"
+        src="assets/imgs/VOITHOS-LOGO.png"
+        alt="voithos_logo_mobile_app"
+      />
+    </div>
+    <ion-card-subtitle color="primary" class="card-subtitle-center"
+      ><b>Leading The Way For An Easy Life</b>
+    </ion-card-subtitle>
+    <ion-card-title class="card-title-center"
+      >Welcome, {{userName}}</ion-card-title
+    >
+
+    <ion-button
+      loginButton
+      color="primary"
+      class="ion-button-class"
+      shape="round"
+      fill="solid"
+      size="medium"
+      expand="block"
+      (click)="goToLogin()"
+      >LOG TO YOUR ACCCOUNT</ion-button
+    >
+    <ion-button
+      signupButton
+      color="primary"
+      class="ion-button-class"
+      shape="round"
+      fill="solid"
+      size="medium"
+      expand="block"
+      (click)="goToSingup()"
+      >LET'S GET STARTED</ion-button
+    >
+  </ion-content>
+</ion-content>

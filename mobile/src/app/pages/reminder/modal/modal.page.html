@@ -1,0 +1,39 @@
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      data-dismiss="modal"
+      color="primary"
+      (click)="dismiss({})"
+      expand="full"
+    >
+      Close</ion-button
+    >
+  </ion-toolbar>
+</ion-footer>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="addEventGroup(form)">
+    <ion-item transparent>
+      <ion-label> Name </ion-label>
+      <ion-input
+        label="name"
+        name="name"
+        type="string"
+        placeholder="Your Name "
+        ngModel
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-button
+      color="primary"
+      class="ion-button-class"
+      shape="round"
+      fill="solid"
+      expand="block"
+      type="submit"
+      [disabled]="form.invalid"
+      >SIGN UP</ion-button
+    >
+  </form>
+</ion-content>

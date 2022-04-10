@@ -1,0 +1,39 @@
+ion-content {
+  background-color: black;
+
+  .card-subtitle-center {
+    display: flex;
+    justify-content: center; //method number 1 in text centering
+  }
+
+  .card-title-center {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40 px;
+    // method number 2 in text centering
+  }
+  .img-container {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    margin: 30px;
+  }
+  .img {
+    border-radius: 50%;
+    max-width: 100%;
+    box-shadow: 0 0 20px #8fb3d1;
+  }
+}
+
+[loginButton] {
+  margin: 30px auto;
+  width: 70%;
+  border-radius: 15px;
+}
+
+[signupButton] {
+  margin: 30px auto;
+  width: 70%;
+  border-radius: 15px;
+}

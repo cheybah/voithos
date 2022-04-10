@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>reminder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-card class="reminderCard">
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile, and
+      climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-grid no-padding class="home-gallery">
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="addEventGroup()">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center card">
+              <ion-icon name="add-outline"></ion-icon>
+              Add
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col
+        col-4
+        *ngFor="let item of eventGroups;let  i = index"
+        [attr.data-index]="i"
+      >
+        <ion-card>
+          <ion-card-header>
+            <ion-button (click)="presentAlert(item.id)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="updateEventGroup(item?.id)">
+              <ion-icon name="trash-outline" color="danger"></ion-icon>
+            </ion-button>
+            <ion-card-title class="ion-text-center card">
+              <a routerLink="/home/reminder/event/{{item.id}}">
+                {{item.name}}
+              </a>
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

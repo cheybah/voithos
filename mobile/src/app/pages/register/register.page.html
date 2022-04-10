@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <div class="register-header ion-padding">
+    <img class="voithos-logo" src="assets/imgs/VOITHOS-LOGO.png" />
+  </div>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="signUP(form)">
+    <div class="center">
+      <h1 big-heading>Welcome to Voithos!</h1>
+      <p intro>To create your account, please enter your info below</p>
+
+      <ion-item transparent>
+        <img iconUser src="assets\icon\user-icon.png" />
+        <ion-input
+          name="name"
+          type="string"
+          placeholder="Your Name "
+          ngModel
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item transparent>
+        <img iconUser src="assets/icon/email_icon.png" />
+        <ion-input
+          name="email"
+          type="email"
+          placeholder="your@email.com"
+          ngModel
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item transparent>
+        <img iconUser src="assets\icon\password-icon.png" />
+        <ion-input
+          name="password"
+          type="password"
+          placeholder="password"
+          ngModel
+          required
+        ></ion-input>
+      </ion-item>
+
+      <div linespace></div>
+      <ion-button
+        color="primary"
+        class="ion-button-class"
+        shape="round"
+        fill="solid"
+        size="large"
+        expand="block"
+        type="submit"
+        [disabled]="form.invalid"
+        >SIGN UP</ion-button
+      >
+      <ion-label class="ion-text-center"
+        >Already have an account?<a routerLink="/login"> Sign in!</a
+        ><ion-icon name="log-in-outline"></ion-icon>
+      </ion-label>
+    </div>
+  </form>
+</ion-content>
