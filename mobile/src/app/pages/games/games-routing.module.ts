@@ -6,8 +6,20 @@ import { GamesPage } from './games.page';
 const routes: Routes = [
   {
     path: '',
-    component: GamesPage
-  }
+    component: GamesPage,
+  },
+
+  {
+    path: 'memory-puzzle',
+    loadChildren: () =>
+      import('./memory-puzzle/memory-puzzle.module').then(
+        (m) => m.MemoryPuzzlePageModule
+      ),
+  },
+  {
+    path: 'sudoku',
+    loadChildren: () => import('./sudoku/sudoku.module').then( m => m.SudokuPageModule)
+  },
 ];
 
 @NgModule({

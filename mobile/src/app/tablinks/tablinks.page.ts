@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomePage } from '../home/home.page';
 import { GamesPage } from '../pages/games/games.page';
 import { ReminderPage } from '../pages/reminder/reminder.page';
-import { TrackingPage } from '../pages/tracking/tracking.page';
+import { TrackingPage } from '../tracking/tracking.page';
 
 @Component({
   selector: 'app-tablinks',

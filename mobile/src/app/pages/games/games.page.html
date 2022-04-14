@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>games</ion-title>
+    <ion-title>Games</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="ion-padding" align="center">
+    Welcome to the game section, {{userName}} !
+    <p>What do you feel like playing today ?</p>
+  </div>
 
+  <ion-button
+    expand="block"
+    routerLink="/games/memory-puzzle"
+    routerDirection="forward"
+  >
+    Memory Puzzle Game
+  </ion-button>
+
+  <ion-button expand="block" routerLink="" routerDirection="forward">
+    Sudoku
+  </ion-button>
+
+  <ion-button expand="block" routerLink="" routerDirection="forward"
+    >CrossWords
+  </ion-button>
 </ion-content>

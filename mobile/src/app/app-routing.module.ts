@@ -15,9 +15,7 @@ const routes: Routes = [
   {
     path: 'tracking',
     loadChildren: () =>
-      import('./pages/tracking/tracking.module').then(
-        (m) => m.TrackingPageModule
-      ),
+      import('./tracking/tracking.module').then((m) => m.TrackingPageModule),
   },
   {
     path: 'games',

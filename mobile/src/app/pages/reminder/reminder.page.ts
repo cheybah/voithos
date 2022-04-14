@@ -26,7 +26,7 @@ export class ReminderPage implements OnInit {
     private storage: StorageServiceService,
     public alertController: AlertController
   ) {
-    this.eventGroups = [{ name: 'cheyma', id: 1 }];
+    this.eventGroups = [];
     this.refrechApi();
   }
 
