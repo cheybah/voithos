@@ -32,7 +32,7 @@ export class EventPage implements OnInit {
     public alertController: AlertController
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.events = [{ name: 'cheyma' }];
+    this.events = [{ name: 'cheyma', id: 1 }];
     this.refrechApi();
   }
 

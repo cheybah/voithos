@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>event</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,10 +17,6 @@
     </ion-card-header>
   </ion-card>
   <ion-list>
-    <ion-item>
-      <ion-label>Date</ion-label>
-      <ion-datetime displayFormat="DD-MMM-YYYY"></ion-datetime>
-    </ion-item>
     <ion-item *ngFor="let item of events;let  i = index" [attr.data-index]="i">
       <ion-label> {{item.name}}</ion-label>
       <ion-label> {{item.time}}</ion-label>

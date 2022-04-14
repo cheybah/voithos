@@ -1,13 +1,134 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="checkmark-circle-outlinet">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>modalEvent</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label>start</ion-label>
+  <ion-button (click)="setType('one')">
+    on time
+    <ion-icon
+      *ngIf="(result.type === 'one' )"
+      slot="end"
+      name="checkmark-circle-outline"
+    ></ion-icon> </ion-button
+  ><ion-button (click)="setType('duration')">
+    duration
+    <ion-icon
+      *ngIf="(result.type === 'duration' )"
+      slot="end"
+      name="checkmark-circle-outline"
+    ></ion-icon> </ion-button
+  ><ion-button (click)="setType('date')">
+    every date
+    <ion-icon
+      *ngIf="(result.type === 'date' )"
+      slot="end"
+      name="checkmark-circle-outline"
+    ></ion-icon>
+  </ion-button>
 
-    <ion-datetime displayFormat="HH:mm"></ion-datetime>
+  <div *ngIf="(result.type !== ''  && result.type !== 'one')">
+    <ion-button (click)="setIsHours()">
+      isHours
+      <ion-icon
+        *ngIf="(result.isHours)"
+        slot="end"
+        name="checkmark-circle-outline"
+      ></ion-icon> </ion-button
+    ><ion-button (click)="setIsDay()">
+      isDay
+      <ion-icon
+        *ngIf="(result.isDay)"
+        slot="end"
+        name="checkmark-circle-outline"
+      ></ion-icon>
+    </ion-button>
+  </div>
+  <ion-item *ngIf="(result.type === 'one')">
+    <ion-datetime></ion-datetime>
   </ion-item>
+
+  <ion-accordion-group *ngIf="(result.type === 'date')">
+    <ion-accordion *ngIf="( result.isHours )" value="time">
+      <ion-item slot="header">
+        <ion-label>time</ion-label>
+      </ion-item>
+
+      <ion-list slot="content">
+        <!-- just itme -->
+        <ion-item>
+          <ion-label>
+            time<ion-datetime presentation="time"></ion-datetime
+          ></ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+
+    <ion-accordion value="moth" *ngIf="(result.isDay )">
+      <ion-item slot="header">
+        <ion-label> select a month </ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <!-- just the name of a day -->
+        <ion-list>
+          <ion-radio-group>
+            <ion-item>
+              <ion-label>Monday</ion-label>
+              <ion-radio value="Monday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Tuesday</ion-label>
+              <ion-radio value="Tuesday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Wednesday</ion-label>
+              <ion-radio value="Wednesday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Thursday</ion-label>
+              <ion-radio value="Thursday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Friday</ion-label>
+              <ion-radio value="Friday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Saturday</ion-label>
+              <ion-radio value="Saturday"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Sunday</ion-label>
+              <ion-radio value="Sunday"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <div *ngIf="(result.type === 'duration')">
+    <ion-item *ngIf="(result.isHours)">
+      <ion-range min="1" max="24" [(ngModel)]="rangeHours"> </ion-range>
+      every {{ rangeHours }} hours
+    </ion-item>
+    <ion-item *ngIf="(result.isDay)">
+      <ion-label>
+        time<ion-datetime presentation="time"></ion-datetime
+      ></ion-label>
+    </ion-item>
+    <ion-item *ngIf="(result.isDay)">
+      <ion-range min="1" max="7" [(ngModel)]="rangeDays"> </ion-range>
+      every {{ rangeDays }} days
+    </ion-item>
+  </div>
 </ion-content>
