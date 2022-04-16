@@ -8,6 +8,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>name event :</ion-label>
+    <ion-input [(ngModel)]="result.name"></ion-input>
+  </ion-item>
   <ion-button (click)="setType('one')">
     on time
     <ion-icon
@@ -49,7 +53,7 @@
     </ion-button>
   </div>
   <ion-item *ngIf="(result.type === 'one')">
-    <ion-datetime></ion-datetime>
+    <ion-datetime [(ngModel)]="result.fullDate"></ion-datetime>
   </ion-item>
 
   <ion-accordion-group *ngIf="(result.type === 'date')">
@@ -62,7 +66,10 @@
         <!-- just itme -->
         <ion-item>
           <ion-label>
-            time<ion-datetime presentation="time"></ion-datetime
+            time<ion-datetime
+              presentation="time"
+              [(ngModel)]="result.time"
+            ></ion-datetime
           ></ion-label>
         </ion-item>
       </ion-list>
@@ -70,47 +77,73 @@
 
     <ion-accordion value="moth" *ngIf="(result.isDay )">
       <ion-item slot="header">
-        <ion-label> select a month </ion-label>
+        <ion-label> select a day </ion-label>
       </ion-item>
       <ion-list slot="content">
         <!-- just the name of a day -->
         <ion-list>
-          <ion-radio-group>
-            <ion-item>
-              <ion-label>Monday</ion-label>
-              <ion-radio value="Monday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Monday</ion-label>
+            <ion-checkbox
+              value="Monday"
+              [(ngModel)]="result.days[0]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Tuesday</ion-label>
-              <ion-radio value="Tuesday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Tuesday</ion-label>
+            <ion-checkbox
+              value="Tuesday"
+              [(ngModel)]="result.days[1]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Wednesday</ion-label>
-              <ion-radio value="Wednesday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Wednesday</ion-label>
+            <ion-checkbox
+              value="Wednesday"
+              [(ngModel)]="result.days[2]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Thursday</ion-label>
-              <ion-radio value="Thursday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Thursday</ion-label>
+            <ion-checkbox
+              value="Thursday"
+              [(ngModel)]="result.days[3]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Friday</ion-label>
-              <ion-radio value="Friday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Friday</ion-label>
+            <ion-checkbox
+              value="Friday"
+              [(ngModel)]="result.days[4]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Saturday</ion-label>
-              <ion-radio value="Saturday"></ion-radio>
-            </ion-item>
+          <ion-item>
+            <ion-label>Saturday</ion-label>
+            <ion-checkbox
+              value="Saturday"
+              [(ngModel)]="result.days[5]"
+            ></ion-checkbox>
+          </ion-item>
 
-            <ion-item>
-              <ion-label>Sunday</ion-label>
-              <ion-radio value="Sunday"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
+          <ion-item>
+            <ion-label>Sunday</ion-label>
+            <ion-checkbox
+              value="Sunday"
+              [(ngModel)]="result.days[6]"
+            ></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>every day</ion-label>
+            <ion-checkbox
+              value="everyDay"
+              [(ngModel)]="result.days[7]"
+            ></ion-checkbox>
+          </ion-item>
         </ion-list>
       </ion-list>
     </ion-accordion>
@@ -118,17 +151,35 @@
 
   <div *ngIf="(result.type === 'duration')">
     <ion-item *ngIf="(result.isHours)">
-      <ion-range min="1" max="24" [(ngModel)]="rangeHours"> </ion-range>
-      every {{ rangeHours }} hours
+      <ion-range min="1" max="24" [(ngModel)]="result.rangeHours"> </ion-range>
+      every {{ result.rangeHours }} hours
     </ion-item>
     <ion-item *ngIf="(result.isDay)">
       <ion-label>
-        time<ion-datetime presentation="time"></ion-datetime
+        time<ion-datetime
+          presentation="time"
+          [(ngModel)]="result.time"
+        ></ion-datetime
       ></ion-label>
     </ion-item>
     <ion-item *ngIf="(result.isDay)">
-      <ion-range min="1" max="7" [(ngModel)]="rangeDays"> </ion-range>
-      every {{ rangeDays }} days
+      <ion-range min="1" max="7" [(ngModel)]="result.rangeDays"> </ion-range>
+      every {{ result.rangeDays }} days
     </ion-item>
   </div>
+
+  <ion-button id="open-modal">Open Datetime Modal</ion-button>
+  <ion-modal trigger="open-modal" [swipeToClose]="true">
+    <ng-template>
+      <ion-label>start</ion-label>
+      <ion-item>
+        <ion-datetime [(ngModel)]="result.start"></ion-datetime>
+      </ion-item>
+      <ion-label>end</ion-label>
+      <ion-item>
+        <ion-datetime [(ngModel)]="result.end"></ion-datetime>
+      </ion-item>
+    </ng-template>
+  </ion-modal>
+  <ion-button (click)="submit()">submit</ion-button>
 </ion-content>

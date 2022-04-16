@@ -32,17 +32,19 @@ export class EventPage implements OnInit {
     public alertController: AlertController
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.events = [{ name: 'cheyma', id: 1 }];
+    this.events = [];
     this.refrechApi();
   }
 
   ngOnInit() {}
 
   async addEvent() {
+    console.log('add methed', this.id);
     const modal = await this.modalCtrl.create({
       component: ModalEventPage,
       componentProps: {
         methed: 'create',
+        theid: this.id,
       },
     });
     modal.onDidDismiss().then(({ data }) => {
@@ -53,6 +55,7 @@ export class EventPage implements OnInit {
   }
 
   async updateEvent(id) {
+    console.log('update methed', id);
     const modal = await this.modalCtrl.create({
       component: ModalEventPage,
       componentProps: {
