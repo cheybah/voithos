@@ -3,16 +3,24 @@
   width: 100vw;
   background-color: #f7fafc;
 }
+.content ion-button {
+  --padding-bottom: 15px;
+  --padding-top: 15px;
+  --padding-start: 5px;
+  font-size: 15px;
+  text-indent: 1px;
+  padding: 0 20px !important;
+}
 .content {
   display: flex;
   position: fixed;
   flex-direction: column;
-  justify-content: space-around;
-  bottom: 1px;
+  justify-content: space-evenly;
+  min-height: 50%;
+  bottom: 10%;
   width: 100%;
   background-color: #e2e8f0;
-  border-top-left-radius: 2em;
-  border-top-right-radius: 2em;
+  border-radius: 2em;
 }
 .imagePuzzle {
   width: 50vw;

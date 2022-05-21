@@ -8,6 +8,9 @@ ion-content {
   .notif img {
     height: 2.5rem;
   }
+  ion-card-content {
+    white-space: nowrap;
+  }
   .notif {
     display: flex;
     justify-content: space-between;
@@ -31,18 +34,19 @@ ion-content {
     height: 100%;
   }
   .bottomGroups {
-    min-height: 20%;
+    min-height: 5rem;
     display: flex;
     position: fixed;
     flex-direction: column;
     justify-content: space-around;
     bottom: 1px;
+    width: 100vw;
     background-color: #e2e8f0;
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
   }
   .logout {
-    margin: 0 1rem;
+    margin: 1.5rem 1rem;
   }
   [transparent] {
     --background: transparent;
