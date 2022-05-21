@@ -1,21 +1,41 @@
-<ion-content padding>
-  <ion-card>
+<ion-content>
+  <div class="container">
     <ion-card-header>
-      <div class="img">
-        <img src="assets/imgs/VOITHOS-LOGO.png" alt="voithos_logo_mobile_app" />
+      <div class="notif">
+        <img src="assets/imgs/ring.png" />
+        <img src="assets/imgs/user.png" />
       </div>
-      <ion-card-subtitle class="card-subtitle-center"
-        ><b>Leading The Way For An Easy Life</b>
-      </ion-card-subtitle>
       <ion-card-title class="card-title-center"
-        >Welcome, {{userName}}</ion-card-title
+        >Hi, {{userName}}</ion-card-title
       >
-    </ion-card-header>
 
-    <ion-card-content>
-      a welcoming phrase if you like, for any home page , generic chwaya
-    </ion-card-content>
-    <a routerLink="tablinks"> tablinks</a>
-    <ion-button (click)="onGoodbye()"> Sign out </ion-button>
-  </ion-card></ion-content
+      <div class="img">
+        <img
+          src="assets/imgs/Pink Elegant Lash Makeup Brow artist Beauty Logo.gif"
+          alt="voithos_logo_mobile_app"
+        />
+      </div>
+      <ion-item transparent>
+        <img
+          icon-smalluser
+          src="assets/imgs/Pink Elegant Lash Makeup Brow artist Beauty Logo.png"
+        />
+        <ion-input
+          name="email"
+          type="email"
+          placeholder="your emergency contact"
+          ngModel
+          required
+        ></ion-input>
+      </ion-item>
+    </ion-card-header>
+    <div class="bottomGroups">
+      <ion-card-content>
+        a welcoming phrase if you like, for any home page , generic chwaya
+      </ion-card-content>
+      <ion-button class="logout" expand="block" (click)="onGoodbye()">
+        Sign out
+      </ion-button>
+    </div>
+  </div></ion-content
 >

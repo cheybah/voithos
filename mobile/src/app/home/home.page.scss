@@ -2,19 +2,77 @@ ion-content {
   .card-subtitle-center {
     display: flex;
     justify-content: center; //method number 1 in text centering
-    color: #41b89a;
+    color: #4541b8;
   }
 
+  .notif img {
+    height: 2.5rem;
+  }
+  .notif {
+    display: flex;
+    justify-content: space-between;
+    height: 2.5rem;
+  }
   .card-title-center {
-    text-align: center;
     width: 100%;
+    padding: 0.5em 0;
     margin-top: 40px;
     // method number 2 in text centering
   }
 
   .img {
     max-width: 100%;
+    background-color: #f7fafc;
     display: flex;
     justify-content: center;
+  }
+  .container {
+    background-color: #f7fafc;
+    height: 100%;
+  }
+  .bottomGroups {
+    min-height: 20%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    bottom: 1px;
+    background-color: #e2e8f0;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+  }
+  .logout {
+    margin: 0 1rem;
+  }
+  [transparent] {
+    --background: transparent;
+  }
+
+  ion-input {
+    --color: rgb(32, 33, 33);
+    --padding-bottom: 15px;
+    --padding-top: 15px;
+    --padding-start: 5px;
+    font-size: 15px;
+    text-indent: 1px;
+    padding-left: 10px !important;
+  }
+
+  [icon-smalluser] {
+    width: 30px;
+  }
+  [icon-smallpass] {
+    width: 30px;
+  }
+
+  [linespace] {
+    height: 20px;
+  }
+
+  ion-item {
+    margin: 26px 15px;
+    border-radius: 5px;
+    //   box-shadow: 2px 10px 20px 5px #1f2937;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 }
